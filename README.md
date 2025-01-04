@@ -10,4 +10,7 @@ I have created 4 dart files:
 3) product cards and this was responsible for adjusting the card specs and view of the product
 4) hotoffers and i used it to work horozontial as requested
 
+Update1: i have changed the app to start from SignUp page 
+i have used and created conditions for the password and email enterance
+
 Thank you and looking forward to hearing your positive feedback
