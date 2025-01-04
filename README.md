@@ -13,4 +13,6 @@ I have created 4 dart files:
 Update1: i have changed the app to start from SignUp page 
 i have used and created conditions for the password and email enterance
 
+Update2: i have added the fade out animation
+
 Thank you and looking forward to hearing your positive feedback
