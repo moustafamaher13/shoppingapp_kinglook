@@ -29,6 +29,20 @@ class _SignUpPageState extends State<SignUpPage> {
     return value == _passwordController.text;
   }
 
+   // Fade transition function
+  void _navigateToShoppingPage(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => ProductPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          var opacity = Tween(begin: 0.0 , end: 1.1).animate(animation);
+          return FadeTransition(opacity: opacity, child: child);
+        },
+      ),
+    );
+  }
+
   void _showSuccessDialog() {
     showDialog(
       context: context,
@@ -38,10 +52,8 @@ class _SignUpPageState extends State<SignUpPage> {
           actions: <Widget>[
             TextButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProductPage()),
-                );
+                Navigator.of(context).pop();
+                _navigateToShoppingPage(context); //
               },
               child: Text('Close'),
             ),
@@ -50,7 +62,6 @@ class _SignUpPageState extends State<SignUpPage> {
       },
     );
   }
-
   void _showErrorSnackbar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(message),
